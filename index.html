@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TechNest — discover everyday tech, audio, accessories and smart gadgets.">
+  <title>TechNest | Everyday Tech, Elevated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="announcement">THE TECH EDIT — Thoughtful tech. Better everyday. <span>Free delivery on orders over ₹2,499</span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="TechNest home"><span class="brand-mark">t<span>n</span></span><span>tech<span class="brand-light">nest</span><small>EVERYDAY TECH, ELEVATED</small></span></a>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#home" class="active">Home</a><a href="#products">Shop all</a><a href="#products" data-category-link="Audio">Audio</a><a href="#products" data-category-link="Accessories">Accessories</a><a href="#about">Our story</a>
+    </nav>
+    <div class="header-actions">
+      <label class="header-search"><span aria-hidden="true">⌕</span><input id="headerSearch" type="search" placeholder="Search products..." aria-label="Search products"></label>
+      <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">☼</button>
+      <button class="icon-button wishlist-head" id="wishlistJump" aria-label="View wishlist" title="Wishlist">♡</button>
+      <button class="cart-button" id="openCart" aria-label="Open shopping cart">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR EVERYDAY UPGRADE</p>
+        <h1>Good tech.<br><em>Better living.</em></h1>
+        <p class="hero-description">Thoughtfully picked gadgets that make work flow, music hit different, and everyday life a little smarter.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#products">Explore the collection <span>↗</span></a><a href="#about" class="text-link">Why TechNest? <span>→</span></a></div>
+        <div class="hero-proof"><div class="proof-avatars"><span>✓</span><span>★</span><span>+</span></div><p><strong>Curated for real life</strong><br><small>Useful picks, no noise.</small></p></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-label label-top">THE DAILY<br>ESSENTIALS <span>↘</span></div>
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85" alt="Premium wireless headphones" class="hero-product">
+        <div class="floating-note"><span class="note-icon">✳</span><div><strong>Sound, reimagined.</strong><small>Meet your new favourite.</small></div></div>
+        <div class="hero-stamp">TECH<br>THAT<br>GETS YOU</div>
+      </div>
+      <div class="hero-bottom"><span>01 / CURATED GADGETS</span><span>SCROLL TO DISCOVER ↓</span><span>MUMBAI · INDIA</span></div>
+    </section>
+
+    <section class="category-strip" aria-label="Shop by category">
+      <button class="category-tile selected" data-category="All"><span class="category-symbol">✳</span><span>Everything</span><small>All the good stuff</small></button>
+      <button class="category-tile" data-category="Audio"><span class="category-symbol">♫</span><span>Audio</span><small>Find your frequency</small></button>
+      <button class="category-tile" data-category="Accessories"><span class="category-symbol">⌘</span><span>Accessories</span><small>Small things, big help</small></button>
+      <button class="category-tile" data-category="Wearables"><span class="category-symbol">◉</span><span>Wearables</span><small>Stay in your flow</small></button>
+      <button class="category-tile" data-category="Smart Home"><span class="category-symbol">⌂</span><span>Smart home</span><small>A little more clever</small></button>
+    </section>
+
+    <section class="products-section section-pad" id="products">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> THE GOOD STUFF</p><h2>Find your <em>next favourite.</em></h2></div>
+        <p class="section-note">Useful by design. Lovely to use.<br>Picked to fit your everyday.</p>
+      </div>
+      <div class="shop-toolbar">
+        <div class="results-label"><strong id="resultsCount">12 products</strong><span> / thoughtfully selected</span></div>
+        <div class="filters">
+          <label class="filter-control"><span>Category</span><select id="categoryFilter"><option value="All">All categories</option><option>Audio</option><option>Accessories</option><option>Wearables</option><option>Smart Home</option></select></label>
+          <label class="filter-control"><span>Price</span><select id="priceFilter"><option value="all">Any price</option><option value="under1000">Under ₹1,000</option><option value="1000-3000">₹1,000–₹3,000</option><option value="over3000">Over ₹3,000</option></select></label>
+          <label class="filter-control"><span>Sort by</span><select id="sortFilter"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option><option value="popular">Most popular</option></select></label>
+        </div>
+      </div>
+      <div id="activeFilters" class="active-filters" hidden><span id="filterSummary"></span><button id="clearFilters">Clear filters ×</button></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state" hidden><span>⌕</span><h3>No matches just yet.</h3><p>Try another search or clear your filters.</p><button class="button button-dark" id="resetSearch">Show all products</button></div>
+    </section>
+
+    <section class="feature-banner">
+      <div class="feature-copy"><p class="eyebrow">LESS SCROLL. MORE SOUL.</p><h2>Only the stuff<br>you'll <em>actually use.</em></h2><p>We believe good technology should feel effortless. Explore a considered collection of everyday upgrades, picked with purpose.</p><a class="button button-light" href="#products">Shop the edit <span>↗</span></a></div>
+      <div class="feature-image"><img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1100&q=85" alt="A curated collection of modern technology devices"></div>
+      <div class="feature-number">TN / 01</div>
+    </section>
+
+    <section class="benefits section-pad">
+      <div class="benefit"><span>✳</span><div><strong>Curated, not crowded</strong><p>Every pick has a purpose.</p></div></div>
+      <div class="benefit"><span>↗</span><div><strong>Easy, honest shopping</strong><p>Clear prices. No surprises.</p></div></div>
+      <div class="benefit"><span>♡</span><div><strong>Made for everyday</strong><p>Little upgrades that matter.</p></div></div>
+    </section>
+
+    <section class="about-section section-pad" id="about">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A LITTLE ABOUT US</p><h2>Tech should fit your life.<br><em>Not the other way around.</em></h2><p>TechNest is a student-built demo storefront with a simple idea: make useful technology feel approachable. Browse our sample collection, save your favourites, and try the checkout flow. This project does not process real payments or place real-world orders.</p><a href="#products" class="text-link">Explore the collection <span>→</span></a>
+    </section>
+
+    <section class="newsletter section-pad"><div><p class="eyebrow">THE OCCASIONAL GOOD THING</p><h2>A little tech inspiration?</h2><p>Join our demo list for product picks and everyday ideas.</p></div><form id="newsletterForm" class="newsletter-form"><label for="newsletterEmail" class="visually-hidden">Email address</label><input type="email" id="newsletterEmail" placeholder="Your email address" required><button type="submit" aria-label="Subscribe">Count me in ↗</button></form><small class="newsletter-note">Demo only — no emails are sent.</small></section>
+  </main>
+
+  <footer class="site-footer" id="contact"><a class="brand footer-brand" href="#home"><span class="brand-mark">t<span>n</span></span><span>tech<span class="brand-light">nest</span><small>EVERYDAY TECH, ELEVATED</small></span></a><p>Useful tech for the way you live.</p><div class="footer-links"><a href="#home">Home</a><a href="#products">Shop</a><a href="#about">About</a><a href="mailto:hello@technest.example">Contact</a></div><small>© 2026 TechNest Demo Store · Built with HTML, CSS & JavaScript</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">YOUR PICKS</p><h2>Your bag <span id="drawerCount">(0)</span></h2></div><button class="close-button" id="closeCart" aria-label="Close cart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-bottom"><div class="coupon-row"><label for="couponInput" class="visually-hidden">Coupon code</label><input id="couponInput" placeholder="Coupon code"><button id="applyCoupon">Apply</button></div><p id="couponMessage" class="coupon-message" aria-live="polite">Try <strong>TECH10</strong> for 10% off.</p><div class="price-line"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><div class="price-line"><span>Discount</span><strong id="cartDiscount">−₹0</strong></div><div class="price-line total-line"><span>Total</span><strong id="cartTotal">₹0</strong></div><button class="button button-dark checkout-start" id="startCheckout">Continue to checkout <span>→</span></button><p class="demo-note">Demo checkout · no payment is collected</p></div>
+  </aside>
+
+  <section class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName" hidden>
+    <button class="close-button modal-close" data-close-modal aria-label="Close product details">×</button><div id="modalContent"></div>
+  </section>
+
+  <section class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" hidden>
+    <button class="close-button modal-close" data-close-modal aria-label="Close checkout">×</button>
+    <div id="checkoutView"><p class="eyebrow">ALMOST YOURS</p><h2 id="checkoutTitle">Delivery <em>details.</em></h2><p class="modal-intro">Fill in the form to simulate placing your order.</p>
+      <form id="checkoutForm" novalidate>
+        <div class="form-grid"><label>Full name<input name="fullName" id="fullName" autocomplete="name" required minlength="2" placeholder="Your full name"><small class="field-error"></small></label><label>Email address<input name="email" id="email" type="email" autocomplete="email" required placeholder="you@example.com"><small class="field-error"></small></label><label>Phone number<input name="phone" id="phone" type="tel" inputmode="numeric" required placeholder="10-digit mobile number"><small class="field-error"></small></label><label>PIN code<input name="pin" id="pin" inputmode="numeric" required placeholder="6-digit PIN code"><small class="field-error"></small></label><label class="full-field">Delivery address<textarea name="address" id="address" rows="3" required minlength="8" autocomplete="street-address" placeholder="Flat, building, street and area"></textarea><small class="field-error"></small></label></div>
+        <div class="checkout-summary"><div><span>Order total</span><strong id="checkoutTotal">₹0</strong></div><small>Payment is not collected. This is a front-end demonstration.</small></div><button class="button button-dark full-button" type="submit">Place demo order <span>→</span></button>
+      </form>
+    </div>
+    <div id="orderSuccess" class="order-success" hidden><span class="success-mark">✓</span><p class="eyebrow">ORDER CONFIRMED</p><h2>That's a <em>wrap.</em></h2><p id="orderMessage"></p><p class="demo-note">This is a simulated order only. No purchase or payment has been made.</p><button class="button button-dark" id="continueShopping">Back to shopping <span>↗</span></button></div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="js/products.js"></script><script src="js/app.js"></script><script src="js/cart.js"></script><script src="js/validation.js"></script><script src="js/checkout.js"></script>
+</body>
+</html>
